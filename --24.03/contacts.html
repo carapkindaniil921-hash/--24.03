@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+      
+        <input type="checkbox" id="burger">
+        
+  
+        <label for="burger" class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </label>
+    
+        <nav class="menu">
+            <a href="index.html">Главная</a>
+            <a href="about.html">Обо мне</a>
+            <a href="skills.html">Навыки</a>
+            <a href="portfolio.html">Портфолио</a>
+            <a href="contacts.html" class="active">Контакты</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Контакты</h2>
+
+            <div class="card">
+                <p> Email: kornevdaniil@gmail.com</p>
+                <p>Телефон: +79945469978</p>
+                <p> Город: Тюмень</p>
+            </div>
+
+            <h3>Напишите мне:</h3>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" placeholder="Введите имя">
+                </div>
+            
+                <div class="form-group">
+                    <label for="email">Ваш Email:</label>
+                    <input type="email" id="email" placeholder="почта@gmail.com">
+                </div>
+            
+                <!-- НОВОЕ: Дата связи -->
+                <div class="form-group">
+                    <label for="contactDate">Желаемая дата связи:</label>
+                    <input type="date" id="contactDate">
+                    <small id="dateError" style="color: red; display: none;">Дата не может быть в прошлом!</small>
+                </div>
+            
+                <!-- НОВОЕ: ФИО -->
+                <div class="form-group">
+                    <label for="fullname">ФИО (полностью):</label>
+                    <input type="text" id="fullname" placeholder="Иванов Иван Иванович">
+                    <div id="fullnameOutput" style="margin-top: 5px; font-size: 14px; color: var(--brown-medium);"></div>
+                </div>
+            
+                <!-- НОВОЕ: Телефон -->
+                <div class="form-group">
+                    <label for="phone">Номер телефона:</label>
+                    <input type="tel" id="phone" placeholder="+7 (___) ___-__-__">
+                    <small id="phoneError" style="color: red; display: none;">Введите корректный номер!</small>
+                </div>
+            
+                <!-- НОВОЕ: Фото -->
+                <div class="form-group">
+                    <label for="photo">Загрузить фото:</label>
+                    <input type="file" id="photo" accept="image/*">
+                    <img id="photoPreview" src="" alt="Предпросмотр" style="max-width: 150px; display: none; margin-top: 10px; border-radius: 5px;">
+                </div>
+            
+                <div class="form-group">
+                    <label for="message">Сообщение:</label>
+                    <textarea id="message" placeholder="Ваше сообщение..."></textarea>
+                </div>
+            
+                <button type="submit">Отправить</button>
+            </form>
+            
+            <!-- Модальное окно (скрыто по умолчанию) -->
+            <div id="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000; justify-content: center; align-items: center;">
+                <div style="background: white; padding: 30px; border-radius: 10px; max-width: 400px; text-align: center; position: relative;">
+                    <h3 id="modalTitle">Заголовок</h3>
+                    <p id="modalMessage">Текст</p>
+                    <button onclick="closeModal()" class="btn" style="margin-top: 15px;">Закрыть</button>
+                </div>
+            </div>
+
+            <h3>Режим работы:</h3>
+            <table>
+                <tr>
+                    <th>День</th>
+                    <th>Часы</th>
+                </tr>
+                <tr>
+                    <td>Пн-Пт</td>
+                    <td>9:00 - 18:00</td>
+                </tr>
+                <tr>
+                    <td>Сб</td>
+                    <td>10:00 - 15:00</td>
+                </tr>
+                <tr>
+                    <td>Вс</td>
+                    <td>Выходной</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>Copyright 2026 Корнев Даниил Андреевич</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
